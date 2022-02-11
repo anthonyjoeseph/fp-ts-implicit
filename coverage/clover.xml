@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1644551382222" clover="3.2.0">
+  <project timestamp="1644551382223" name="All files">
+    <metrics statements="38" coveredstatements="22" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="6" elements="50" coveredelements="31" complexity="0" loc="38" ncloc="38" packages="1" files="6" classes="6"/>
+    <file name="Monoid.ts" path="/Users/flipside-anthony/Developer/personal/fp-ts-implicit/src/Monoid.ts">
+      <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="10" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
+      <line num="24" count="5" type="stmt"/>
+    </file>
+    <file name="Semigroup.ts" path="/Users/flipside-anthony/Developer/personal/fp-ts-implicit/src/Semigroup.ts">
+      <metrics statements="11" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="3"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="5" type="cond" truecount="3" falsecount="1"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="24" count="5" type="stmt"/>
+      <line num="25" count="5" type="stmt"/>
+    </file>
+    <file name="boolean.ts" path="/Users/flipside-anthony/Developer/personal/fp-ts-implicit/src/boolean.ts">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+    </file>
+    <file name="index.ts" path="/Users/flipside-anthony/Developer/personal/fp-ts-implicit/src/index.ts">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+    </file>
+    <file name="number.ts" path="/Users/flipside-anthony/Developer/personal/fp-ts-implicit/src/number.ts">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+    </file>
+    <file name="string.ts" path="/Users/flipside-anthony/Developer/personal/fp-ts-implicit/src/string.ts">
+      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
