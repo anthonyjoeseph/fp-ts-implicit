@@ -1,9 +1,9 @@
 # fp-ts-implicit
 
 ```ts
+import { monoid as M } from "fp-ts-implicit";
 import assert from "assert";
 import { pipe } from "fp-ts/function";
-import { monoid as M } from "fp-ts-implicit";
 import { struct } from "fp-ts/Monoid";
 import { MonoidSum } from "fp-ts/number";
 
@@ -69,6 +69,5 @@ assert.deepStrictEqual(pointTest, { x: 3, y: 3 });
 ## Cons:
 - Users must register each custom instance manually
 - More complicated function signatures
-- Instances have to load before anything else can happen (performance? complexity?)
 - No more parameterized instances (E.g. Record.Traversable(ord)) - will have to be static
 - No jsdoc per instance
