@@ -1,5 +1,5 @@
 import { Magma, concatAll as ca } from "fp-ts/Magma";
-import { AllExtendingKeys } from "./internal";
+import { AllExtendingKeys, throwMissingInstance } from "./internal";
 import { ExtractInstanceTypes as ExtractSemigroupInstances, getInstance as getSemigroupInstance } from "./Semigroup";
 
 export interface ExtractInstanceTypes extends ExtractSemigroupInstances {}
@@ -17,7 +17,7 @@ export const registerInstance = <I extends Instance>(name: I, m: Magma<ExtractIn
 };
 
 export const getInstance = <A>(name: Instance): Magma<A> => {
-  return (instances[name] as any) ?? getSemigroupInstance<A>(name);
+  return (instances[name] as any) ?? getSemigroupInstance<A>(name) ?? throwMissingInstance("Magma", name);
 };
 
 export const concatAll =

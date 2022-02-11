@@ -8,6 +8,7 @@ module.exports = {
   },
   testRegex: "test",
   moduleFileExtensions: ["ts", "js"],
+  setupFiles: ["<rootDir>/tests/helpers/test-setup.ts"],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -16,5 +17,5 @@ module.exports = {
       statements: 100,
     },
   },
-  modulePathIgnorePatterns: ["util"],
+  modulePathIgnorePatterns: ["util", "helpers"],
 };

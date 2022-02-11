@@ -1,6 +1,6 @@
 import { Monad, Monad1, Monad2, Monad3, Monad4 } from "fp-ts/Monad";
 import { URIS, URIS2, URIS3, URIS4, HKT, Kind, Kind2, Kind3, Kind4 } from "fp-ts/HKT";
-import { AllNonNeverKeys } from "./internal";
+import { AllNonNeverKeys, throwMissingInstance } from "./internal";
 
 export interface ExtractInstanceTypes<A> {}
 
@@ -27,7 +27,7 @@ export const registerInstance = <I extends Instance>(name: I, m: MonadForInstanc
 };
 
 export const getInstance = <F>(name: Instance): Monad<F> => {
-  return instances[name] as any;
+  return (instances[name] as any) ?? throwMissingInstance("Monad", name);
 };
 
 export function chain<

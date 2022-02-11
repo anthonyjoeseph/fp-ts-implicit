@@ -1,5 +1,5 @@
 import { Semigroup, concatAll as ca } from "fp-ts/Semigroup";
-import { AllExtendingKeys } from "./internal";
+import { AllExtendingKeys, throwMissingInstance } from "./internal";
 import { ExtractInstanceTypes as ExtractMonoidInstances, getInstance as getMonoidInstance } from "./Monoid";
 
 export interface ExtractInstanceTypes extends ExtractMonoidInstances {}
@@ -17,7 +17,7 @@ export const registerInstance = <I extends Instance>(name: I, m: Semigroup<Extra
 };
 
 export const getInstance = <A>(name: Instance): Semigroup<A> => {
-  return (instances[name] as any) ?? getMonoidInstance<A>(name);
+  return (instances[name] as any) ?? getMonoidInstance<A>(name) ?? throwMissingInstance("Semigroup", name);
 };
 
 export const concatAll =

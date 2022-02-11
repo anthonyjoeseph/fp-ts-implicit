@@ -1,5 +1,5 @@
 import { Monoid, concatAll as ca } from "fp-ts/Monoid";
-import { AllExtendingKeys } from "./internal";
+import { AllExtendingKeys, throwMissingInstance } from "./internal";
 
 export interface ExtractInstanceTypes {}
 
@@ -16,7 +16,7 @@ export const registerInstance = <I extends Instance>(name: I, m: Monoid<ExtractI
 };
 
 export const getInstance = <A>(name: Instance): Monoid<A> => {
-  return instances[name] as any;
+  return (instances[name] as any) ?? throwMissingInstance("Monoid", name);
 };
 
 export const concatAll =

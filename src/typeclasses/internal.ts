@@ -5,3 +5,7 @@ export type AllNonNeverKeys<A> = keyof {
 export type AllExtendingKeys<E, A> = keyof {
   [K in keyof E as E[K] extends A ? K : never]: unknown;
 };
+
+export const throwMissingInstance = (typeclassName: string, instanceName: string): never => {
+  throw new Error(`Missing ${typeclassName} instance for ${instanceName}`);
+};

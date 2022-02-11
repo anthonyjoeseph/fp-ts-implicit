@@ -1,7 +1,7 @@
 import { Functor, Functor1, Functor2, Functor3, Functor4 } from "fp-ts/Functor";
 import { URIS, URIS2, URIS3, URIS4, HKT, Kind, Kind2, Kind3, Kind4 } from "fp-ts/HKT";
 import { ExtractInstanceTypes as ExtractMonadInstanceTypes, getInstance as getMonadInstance } from "./Monad";
-import { AllNonNeverKeys } from "./internal";
+import { AllNonNeverKeys, throwMissingInstance } from "./internal";
 
 export interface ExtractInstanceTypes<A> extends ExtractMonadInstanceTypes<A> {}
 
@@ -30,7 +30,7 @@ export const registerInstance = <I extends Instance>(name: I, m: FunctorForInsta
 export const getInstance = <F extends Instance>(name: F): Functor<F> => {
   const functorInstance = instances[name];
   if (functorInstance) return functorInstance as any;
-  const monadInstance = getMonadInstance<F>(name);
+  const monadInstance = getMonadInstance<F>(name) ?? throwMissingInstance("Functor", name);
   return {
     URI: name,
     map: (fa, f) => monadInstance.chain(fa, (a) => monadInstance.of(f(a))),
