@@ -6,7 +6,7 @@ import * as functor from "./typeclasses/Functor";
 
 export { monoid, semigroup, magma, monad, functor };
 
-export const allInstances = ["boolean", "number", "string", "Either", "Option"];
+export const allInstances = ["boolean", "number", "string", "Either", "Option"] as const;
 
 export const importInstances = (...instances: typeof allInstances[number][]) =>
   instances.map((x) => import(`./instances/${x as string}`));

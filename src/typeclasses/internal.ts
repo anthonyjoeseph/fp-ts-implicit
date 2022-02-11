@@ -7,5 +7,10 @@ export type AllExtendingKeys<E, A> = keyof {
 };
 
 export const throwMissingInstance = (typeclassName: string, instanceName: string): never => {
-  throw new Error(`Missing ${typeclassName} instance for ${instanceName}`);
+  throw new Error(
+    `Missing ${typeclassName} instance for ${instanceName}` +
+      `\nPlease import this instance somewhere in your code like so: ` +
+      `\n\n\`import { importInstances } from 'fp-ts-implicit'; \` ` +
+      `\n\`importInstances("${instanceName}")\``
+  );
 };
