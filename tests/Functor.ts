@@ -2,22 +2,22 @@ import assert from "assert";
 import { pipe } from "fp-ts/function";
 import * as O from "fp-ts/Option";
 import * as E from "fp-ts/Either";
-import { monad as M } from "../src/index";
+import { functor as F } from "../src/index";
 
-test("monad - chain - Option", () => {
+test("functor - map - Option", () => {
   const some = O.some(22);
   const a = pipe(
     some,
-    M.chain("Option", (a) => O.some("hello"))
+    F.map("Option", (a) => "Hello")
   );
-  assert.deepStrictEqual(a, O.some("hello"));
+  assert.deepStrictEqual(a, O.some("Hello"));
 });
 
-test("monad - chain - Either", () => {
+test("functor - map - Either", () => {
   const right = E.right<string, number>(22);
   const a = pipe(
     right,
-    M.chain("Either", (a) => E.right(a + 3))
+    F.map("Either", (a) => a + 3)
   );
   assert.deepStrictEqual(a, E.right(25));
 });

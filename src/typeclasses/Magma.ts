@@ -16,11 +16,11 @@ export const registerInstance = <I extends Instance>(name: I, m: Magma<ExtractIn
   instances[name] = m as never;
 };
 
-export const getInstance = <I extends Instance>(name: I) => {
-  return instances[name] ?? getSemigroupInstance(name);
+export const getInstance = <A>(name: Instance): Magma<A> => {
+  return (instances[name] as any) ?? getSemigroupInstance<A>(name);
 };
 
 export const concatAll =
   <A>(s: GetInstances<A>, startWith: A) =>
   (a: A[]) =>
-    ca(getInstance(s) as Magma<unknown>)(startWith)(a);
+    ca(getInstance<A>(s))(startWith)(a);

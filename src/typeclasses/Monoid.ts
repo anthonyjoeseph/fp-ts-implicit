@@ -15,11 +15,11 @@ export const registerInstance = <I extends Instance>(name: I, m: Monoid<ExtractI
   instances[name] = m as never;
 };
 
-export const getInstance = <I extends Instance>(name: I) => {
-  return instances[name];
+export const getInstance = <A>(name: Instance): Monoid<A> => {
+  return instances[name] as any;
 };
 
 export const concatAll =
   <A>(m: GetInstances<A>) =>
   (a: A[]) =>
-    ca(getInstance(m) as Monoid<unknown>)(a);
+    ca(getInstance<A>(m))(a);

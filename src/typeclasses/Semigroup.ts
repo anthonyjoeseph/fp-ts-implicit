@@ -16,11 +16,11 @@ export const registerInstance = <I extends Instance>(name: I, m: Semigroup<Extra
   instances[name] = m as never;
 };
 
-export const getInstance = <I extends Instance>(name: I) => {
-  return instances[name] ?? getMonoidInstance(name);
+export const getInstance = <A>(name: Instance): Semigroup<A> => {
+  return (instances[name] as any) ?? getMonoidInstance<A>(name);
 };
 
 export const concatAll =
   <A>(s: GetInstances<A>, startWith: A) =>
   (a: A[]) =>
-    ca(getInstance(s) as Semigroup<unknown>)(startWith)(a);
+    ca(getInstance<A>(s))(startWith)(a);
