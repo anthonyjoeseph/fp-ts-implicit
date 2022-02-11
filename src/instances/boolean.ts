@@ -3,10 +3,10 @@ import { registerInstance } from "../typeclasses/Monoid";
 
 declare module "../typeclasses/Monoid" {
   interface ExtractInstanceTypes<A> {
-    all: A extends boolean ? boolean : never;
-    any: A extends boolean ? boolean : never;
+    All: A extends boolean ? boolean : never;
+    Any: A extends boolean ? boolean : never;
   }
 }
 
-registerInstance("all", B.MonoidAll);
-registerInstance("any", B.MonoidAny);
+registerInstance("All", B.MonoidAll);
+registerInstance("Any", B.MonoidAny);

@@ -2,27 +2,27 @@ import assert from "assert";
 import { pipe } from "fp-ts/function";
 import { monoid as M } from "../src/index";
 
-test("number - product", () => {
-  const numTest = pipe([1, 5, 10], M.concatAll("product"));
+test("number - Product", () => {
+  const numTest = pipe([1, 5, 10], M.concatAll("Product"));
   assert.deepStrictEqual(numTest, 50);
 });
 
-test("number - sum", () => {
-  const numTest = pipe([1, 5, 10], M.concatAll("sum"));
+test("number - Sum", () => {
+  const numTest = pipe([1, 5, 10], M.concatAll("Sum"));
   assert.deepStrictEqual(numTest, 16);
 });
 
-test("string", () => {
-  const stringTest = pipe(["a", "b", "c"], M.concatAll("string"));
+test("String", () => {
+  const stringTest = pipe(["a", "b", "c"], M.concatAll("String"));
   assert.deepStrictEqual(stringTest, "abc");
 });
 
-test("boolean - any", () => {
-  const boolTest = pipe([true, true, false], M.concatAll("any"));
+test("boolean - Any", () => {
+  const boolTest = pipe([true, true, false], M.concatAll("Any"));
   assert.deepStrictEqual(boolTest, true);
 });
 
-test("boolean - all", () => {
-  const boolTest = pipe([true, true, false], M.concatAll("all"));
+test("boolean - All", () => {
+  const boolTest = pipe([true, true, false], M.concatAll("All"));
   assert.deepStrictEqual(boolTest, false);
 });

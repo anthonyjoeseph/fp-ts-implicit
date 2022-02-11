@@ -3,10 +3,10 @@ import { registerInstance } from "../typeclasses/Monoid";
 
 declare module "../typeclasses/Monoid" {
   interface ExtractInstanceTypes<A> {
-    sum: A extends number ? number : never;
-    product: A extends number ? number : never;
+    Sum: A extends number ? number : never;
+    Product: A extends number ? number : never;
   }
 }
 
-registerInstance("sum", N.MonoidSum);
-registerInstance("product", N.MonoidProduct);
+registerInstance("Sum", N.MonoidSum);
+registerInstance("Product", N.MonoidProduct);
