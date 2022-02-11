@@ -1,9 +1,9 @@
 import * as M from "fp-ts/Monoid";
 import * as S from "fp-ts/string";
-import { registerInstance } from "./Monoid";
+import { registerInstance } from "../typeclasses/Monoid";
 
-declare module "./Monoid" {
-  interface ExtractInstances<A> {
+declare module "../typeclasses/Monoid" {
+  interface ExtractInstanceTypes<A> {
     string: A extends string ? string : never;
   }
 }

@@ -1,9 +1,9 @@
 import * as M from "fp-ts/Monoid";
 import * as B from "fp-ts/boolean";
-import { registerInstance } from "./Monoid";
+import { registerInstance } from "../typeclasses/Monoid";
 
-declare module "./Monoid" {
-  interface ExtractInstances<A> {
+declare module "../typeclasses/Monoid" {
+  interface ExtractInstanceTypes<A> {
     all: A extends boolean ? boolean : never;
     any: A extends boolean ? boolean : never;
   }

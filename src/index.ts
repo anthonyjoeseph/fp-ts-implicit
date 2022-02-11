@@ -1,10 +1,14 @@
-import * as M from "./Monoid";
-import * as S from "./Semigroup";
-import * as Ma from "./Magma";
-import * as N from "./number";
-import * as St from "./string";
-import * as B from "./boolean";
+import * as monoid from "./typeclasses/Monoid";
+import * as semigroup from "./typeclasses/Semigroup";
+import * as magma from "./typeclasses/Magma";
+import * as monad from "./typeclasses/Monad";
 
-const unused = { ...N, ...St, ...B };
+import * as number from "./instances/number";
+import * as string from "./instances/string";
+import * as boolean from "./instances/boolean";
+import * as option from "./instances/Option";
+import * as either from "./instances/Either";
 
-export { M as monoid, S as semigroup, Ma as magma };
+const runRegisterInstances = { ...number, ...string, ...boolean, ...option, ...either };
+
+export { monoid, semigroup, magma, monad };

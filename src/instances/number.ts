@@ -1,8 +1,8 @@
 import * as N from "fp-ts/number";
-import { registerInstance } from "./Monoid";
+import { registerInstance } from "../typeclasses/Monoid";
 
-declare module "./Monoid" {
-  interface ExtractInstances<A> {
+declare module "../typeclasses/Monoid" {
+  interface ExtractInstanceTypes<A> {
     sum: A extends number ? number : never;
     product: A extends number ? number : never;
   }
