@@ -82,3 +82,4 @@ assert.deepStrictEqual(semigroupTest, { x: 12, y: 12 });
 - More complicated function signatures
 - No more parameterized instances (E.g. [Record.getTraversable(ord)](https://github.com/gcanti/fp-ts/blob/master/src/ReadonlyRecord.ts#L1948)) - will have to be static
 - No jsdoc per instance
+- files declaring custom instances have to be imported somewhere, or else they're ignored at runtime
