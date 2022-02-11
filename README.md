@@ -4,7 +4,7 @@
 import { monoid as M } from "fp-ts-implicit";
 import assert from "assert";
 import { pipe } from "fp-ts/function";
-import { struct } from "fp-ts/Monoid";
+import { struct, concatAll } from "fp-ts/Monoid";
 import { MonoidSum } from "fp-ts/number";
 
 const numTest = pipe(
@@ -27,8 +27,10 @@ assert.deepStrictEqual(boolTest, true);
 
 export const concatFirstThree =
   <A>(m: M.GetInstances<A>) =>
-  (a: A[]) =>
-    ca(M.getInstance<A>(m))(a.slice(0, 3));
+  (a: A[]): A => {
+    const monoid = M.getInstance<A>(m);
+    return a.slice(0, 3).reduce(monoid.concat, monoid.empty);
+  }
 
 ////////////////////////////////
 // Register your own instance //
