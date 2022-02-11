@@ -1,18 +1,18 @@
 import { Semigroup, concatAll as ca } from "fp-ts/Semigroup";
-import { AllNonNeverKeys } from "./internal";
+import { AllExtendingKeys } from "./internal";
 import { ExtractInstanceTypes as ExtractMonoidInstances, getInstance as getMonoidInstance } from "./Monoid";
 
-export interface ExtractInstanceTypes<A> extends ExtractMonoidInstances<A> {}
+export interface ExtractInstanceTypes extends ExtractMonoidInstances {}
 
-export type GetInstances<A> = AllNonNeverKeys<ExtractInstanceTypes<A>>;
+export type GetInstances<A> = AllExtendingKeys<ExtractInstanceTypes, A>;
 
-export type Instance = keyof ExtractInstanceTypes<unknown>;
+export type Instance = keyof ExtractInstanceTypes;
 
 const instances = {} as {
-  [K in Instance]: Semigroup<ExtractInstanceTypes<any>[K]>;
+  [K in Instance]: Semigroup<ExtractInstanceTypes[K]>;
 };
 
-export const registerInstance = <I extends Instance>(name: I, m: Semigroup<ExtractInstanceTypes<any>[I]>) => {
+export const registerInstance = <I extends Instance>(name: I, m: Semigroup<ExtractInstanceTypes[I]>) => {
   instances[name] = m as never;
 };
 

@@ -1,17 +1,17 @@
 import { Monoid, concatAll as ca } from "fp-ts/Monoid";
-import { AllNonNeverKeys } from "./internal";
+import { AllExtendingKeys } from "./internal";
 
-export interface ExtractInstanceTypes<A> {}
+export interface ExtractInstanceTypes {}
 
-export type GetInstances<A> = AllNonNeverKeys<ExtractInstanceTypes<A>>;
+export type GetInstances<A> = AllExtendingKeys<ExtractInstanceTypes, A>;
 
-export type Instance = keyof ExtractInstanceTypes<unknown>;
+export type Instance = keyof ExtractInstanceTypes;
 
 export const instances = {} as {
-  [K in Instance]: Monoid<ExtractInstanceTypes<any>[K]>;
+  [K in Instance]: Monoid<ExtractInstanceTypes[K]>;
 };
 
-export const registerInstance = <I extends Instance>(name: I, m: Monoid<ExtractInstanceTypes<any>[I]>) => {
+export const registerInstance = <I extends Instance>(name: I, m: Monoid<ExtractInstanceTypes[I]>) => {
   instances[name] = m as never;
 };
 

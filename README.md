@@ -41,7 +41,7 @@ const PointMonoid = struct<Point>({ x: MonoidSum, y: MonoidSum });
 
 declare module "fp-ts-implicit/typeclasses/Monoid" {
   interface ExtractInstanceTypes<A> {
-    Point: A extends Point ? Point : never;
+    Point: Point;
   }
 }
 
