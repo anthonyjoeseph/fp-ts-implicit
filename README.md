@@ -9,15 +9,15 @@ import { MonoidSum } from "fp-ts/number";
 
 const numTest = pipe(
   [1, 5, 10], 
-  M.concatAll("product")
-  //            ^--- inferred as "product" | "sum"
+  M.concatAll("Product")
+  //            ^--- inferred as "Product" | "Sum"
 );
 assert.deepStrictEqual(numTest, 50);
 
 const boolTest = pipe(
   [true, true, false], 
-  M.concatAll("all")
-  //            ^--- inferred as "any" | "all"
+  M.concatAll("All")
+  //            ^--- inferred as "Any" | "All"
 );
 assert.deepStrictEqual(boolTest, true);
 
