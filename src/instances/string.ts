@@ -1,4 +1,3 @@
-import * as M from "fp-ts/Monoid";
 import * as S from "fp-ts/string";
 import { registerInstance } from "../typeclasses/Monoid";
 
