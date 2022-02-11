@@ -72,7 +72,7 @@ assert.deepStrictEqual(semigroupTest, { x: 12, y: 12 });
 ## Pros:
 - Less importing - `import * as M from 'Monad'` for _all_ maps & chains
 - Instance inference - autocomplete tells you all of the options that will fill the current type
-- Instances can extend - a Monad instance (`of` & `chain`) gives Applicative, Chain, Apply, Pointed, and Functor instances for free (without having to implement map, ap etc.)
+- [Instances can extend](https://github.com/anthonyjoeseph/fp-ts-implicit/blob/main/src/typeclasses/Functor.ts#L6) - a Monad instance (`of` & `chain`) gives Applicative, Chain, Apply, Pointed, and Functor instances for free ([without having to implement map, ap etc.](https://github.com/anthonyjoeseph/fp-ts-implicit/blob/main/src/typeclasses/Functor.ts#L33))
   - could mean significantly less code in implementations
 - Closer to Haskell style
 

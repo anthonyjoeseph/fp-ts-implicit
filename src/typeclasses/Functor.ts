@@ -27,12 +27,12 @@ export const registerInstance = <I extends Instance>(name: I, m: FunctorForInsta
   instances[name] = m as never;
 };
 
-export const getInstance = <F>(name: Instance): Functor<F> => {
+export const getInstance = <F extends Instance>(name: F): Functor<F> => {
   const functorInstance = instances[name];
   if (functorInstance) return functorInstance as any;
   const monadInstance = getMonadInstance<F>(name);
   return {
-    URI: name as unknown as F,
+    URI: name,
     map: (fa, f) => monadInstance.chain(fa, (a) => monadInstance.of(f(a))),
   };
 };
