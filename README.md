@@ -80,5 +80,5 @@ assert.deepStrictEqual(semigroupTest, { x: 12, y: 12 });
 ## Cons:
 - Users must register each custom instance manually
 - More complicated function signatures
-- No more parameterized instances (E.g. Record.Traversable(ord)) - will have to be static
+- No more parameterized instances (E.g. [Record.getTraversable(ord)](https://github.com/gcanti/fp-ts/blob/master/src/ReadonlyRecord.ts#L1948)) - will have to be static
 - No jsdoc per instance
