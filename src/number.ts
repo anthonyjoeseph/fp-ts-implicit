@@ -10,5 +10,3 @@ declare module "./Monoid" {
 
 registerInstance("sum", N.MonoidSum);
 registerInstance("product", N.MonoidProduct);
-
-export const one = 1;

@@ -20,5 +20,7 @@ export const getInstance = <I extends Instance>(name: I): Monoid<ExtractInstance
 
 export const concatAll =
   <A>(m: GetInstances<A>) =>
-  (a: A[]) =>
-    ca(getInstance(m) as Monoid<any>)(a);
+  (a: A[]) => {
+    const inst = getInstance(m) as Monoid<any>;
+    return ca(inst)(a);
+  };

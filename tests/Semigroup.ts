@@ -23,6 +23,6 @@ test("boolean - any", () => {
 });
 
 test("boolean - all", () => {
-  const boolTest = pipe([true, true, false], S.concatAll("any", true));
+  const boolTest = pipe([true, true, false], S.concatAll("all", true));
   assert.deepStrictEqual(boolTest, false);
 });

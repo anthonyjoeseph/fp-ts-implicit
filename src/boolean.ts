@@ -11,5 +11,3 @@ declare module "./Monoid" {
 
 registerInstance("all", B.MonoidAll);
 registerInstance("any", B.MonoidAny);
-
-export const one = 1;

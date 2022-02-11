@@ -9,5 +9,3 @@ declare module "./Monoid" {
 }
 
 registerInstance("string", S.Monoid);
-
-export const one = 1;

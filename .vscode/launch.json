@@ -17,7 +17,7 @@
       "args": [
         "src/index.ts"
       ],
-      "cwd": "${workspaceRoot}/services/discord-bot",
+      "cwd": "${workspaceRoot}",
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": [
         "<node_internals>/**",
@@ -44,7 +44,7 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
-      "cwd": "${workspaceFolder}/services/graphql-api",
+      "cwd": "${workspaceFolder}/tests",
       "runtimeExecutable": "yarn",
       "args": [
         "test:watch",
