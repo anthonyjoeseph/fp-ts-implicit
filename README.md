@@ -45,7 +45,7 @@ declare module "fp-ts-implicit/typeclasses/Monoid" {
   }
 }
 
-registerInstance("Point", PointMonoid);
+M.registerInstance("Point", PointMonoid);
 
 ///////////////////////////
 // Use your own instance //
