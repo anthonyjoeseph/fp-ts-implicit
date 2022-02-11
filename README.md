@@ -1,7 +1,7 @@
 # fp-ts-implicit
 
 ```ts
-import { monoid as M } from "fp-ts-implicit";
+import { monoid as M, semigroup as S } from "fp-ts-implicit";
 import assert from "assert";
 import { pipe } from "fp-ts/function";
 import { struct, concatAll } from "fp-ts/Monoid";
@@ -58,6 +58,15 @@ const pointTest = pipe(
   //            ^--- inferred as "Point"
 );
 assert.deepStrictEqual(pointTest, { x: 3, y: 3 });
+
+
+// We get a 'semigroup' instance as well, for free
+const semigroupTest = pipe(
+  [point, point, point], 
+  S.concatAll("Point", { x: 9, y: 9 })
+  //            ^--- inferred as "Point"
+);
+assert.deepStrictEqual(semigroupTest, { x: 12, y: 12 });
 ```
 
 ## Pros:
